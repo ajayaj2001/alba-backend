@@ -3,7 +3,7 @@
   "version": "5.0.2",
   "scripts": {
     "dev": "ts-node-dev --respawn server.shop.ts",
-    "build": "rimraf dist && mkdir dist && tsc -b && copyfiles -u 1 src/ dist/",
+    "build": "cross-env NODE_ENV=production rimraf dist && mkdir dist && tsc -b && copyfiles -u 1 src/ dist/",
     "start": "cross-env NODE_ENV=production node dist/server.shop.js"
   },
   "dependencies": {
@@ -17,8 +17,7 @@
     "graphql-tools": "^7.0.4",
     "lodash": "^4.17.21",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^1.1.1",
-    "typedi": "^0.10.0"
+    "type-graphql": "^1.1.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
